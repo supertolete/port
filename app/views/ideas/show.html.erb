@@ -1,0 +1,33 @@
+<p id="notice">
+<%= notice %></p>
+
+
+<p>
+ 
+ <strong>Name:</strong>
+ 
+ <%= @idea.name %>
+</p>
+
+
+<p>
+  
+<strong>Description:</strong>
+ 
+ <%= @idea.description %>
+</p>
+
+
+<p>
+ 
+<strong>Picture:</strong>
+ 
+<%= link_to 'Ver la foto', @idea.picture_url,  :target => "_blank" %>
+<!--<%= @idea.picture %>--></p>
+
+
+
+<%= link_to 'Home', root_path %> |
+<!--<p><a href="http://localhost:3000/uploads/idea/picture/11/iss.jpg" class="dock-item" target="_blank"><img alt="" border="0" src="\public\uploads\idea\picture\11" /><span>Ver la foto</span></a></p>-->
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>

@@ -1,0 +1,58 @@
+﻿<p id="notice"><%= notice %></p>
+
+
+<table>
+<tr>
+<td><h1>PorttaF</h1></td><td><%= image_tag ("/assets/mockup/llog0.png"), class: "img-responsive"%></td>
+</tr>
+</table>
+<table class="table table-striped table-hover table-sm">
+  
+<thead>
+   
+ <tr>
+      
+<th>Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th colspan="4"></th>
+    
+</tr>
+  
+</thead>
+
+ 
+ <tbody>
+   
+ <% @ideas.each do |idea| %>
+     
+ <tr>
+       
+ <td><%= idea.name %></td>
+        <td><%= idea.description %></td>
+        <td><%= idea.picture.file.filename %></td>
+        <td><%= link_to '<button type="button" class="btn btn-secondary btn-sm">Show</button>'.html_safe, idea %></td>
+        <td><%= link_to '<button type="button" class="btn btn-secondary btn-sm">Edit</button>'.html_safe, edit_idea_path(idea) %></td>
+        <td><%= link_to '<button type="button" class="btn btn-secondary btn-sm">Destroy</button>'.html_safe, idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     
+ </tr>
+   
+ <% end %>
+ 
+ </tbody>
+
+</table>
+
+
+<!--<br>
+
+<%= link_to 'New Idea', new_idea_path %>
+
+<br><%= link_to '<button type="button">New Post</button>'.html_safe, new_idea_path %>
+<br><br><%= link_to '<button type="button" 
+class="btn btn-primary">New Post</button>'.html_safe, new_idea_path %>-->
+<br><br><%= link_to '<button type="button" 
+class="btn btn-primary btn-sm">New Post</button>'.html_safe, new_idea_path %>
+
+
+
